@@ -1,5 +1,7 @@
 name: ecs-deploy
-on: workflow_dispatch
+on: 
+ workflow_call:
+ workflow_dispatch:
 jobs:
   deploy:
     runs-on: ubuntu-20.04

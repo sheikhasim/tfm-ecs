@@ -7,6 +7,8 @@ on:
    - main
    
  pull_request:
+  types:
+   [opened, reopened]
   branches:
   - main
   
@@ -17,7 +19,6 @@ jobs:
 
 # call test workflow   
   call-test-workflow:
-   
    uses: ./.github/workflows/linter-test.yml
 
 # call the build workflow

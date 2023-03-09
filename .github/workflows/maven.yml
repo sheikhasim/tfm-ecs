@@ -35,6 +35,7 @@ jobs:
       with:
        name: Package
        path: artifacts
+       if-no-files-found: warn
     
     
     - name: Build with Maven

@@ -30,7 +30,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     
-    - run: mkdir artifacts && cp target/*.jar artifacts
+    - run: mkdir artifacts 
     - uses: actions/upload-artifact@v3
       with:
        name: Package

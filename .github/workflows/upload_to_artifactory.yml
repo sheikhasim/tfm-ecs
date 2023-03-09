@@ -2,11 +2,16 @@ name: save to artifactory
 
 on:
   workflow_call:
- 
- 
- jobs:
-  - name: save artifact
-      uses: actions/upload-artifact@v2
-      with:
-       name: github-actions-artifact
-       path: artifacts
+
+jobs:
+ saveArtifact:
+   runs-on: ubuntu-latest
+ steps:
+  - uses: actions/checkout@v3
+  - run: mkdir artifacts && cp target/*.jar artifacts
+           cd artifacts && ls
+  
+    uses: actions/upload-artifact@v2
+    with:
+        name: github-actions-artifact
+        path: artifacts

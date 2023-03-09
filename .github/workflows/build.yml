@@ -40,6 +40,7 @@ jobs:
        name: github-actions-artifact
        path: artifacts
   run-lint:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

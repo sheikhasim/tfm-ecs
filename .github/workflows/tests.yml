@@ -7,11 +7,14 @@
 name: Lint Code Base
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+ workflow_call:
+  #push:
+    #branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
 jobs:
+  call-build-workflow:
+   uses: ./.tfm-ecs/.github/workflows/build.yml
   run-lint:
     runs-on: ubuntu-latest
     steps:

@@ -1,9 +1,14 @@
 name: Main
 
 on:
+ push:
+  branches:
+   - feature1
+   - main
+   
  pull_request:
   branches:
-  - feature1
+  - main
   
  workflow_dispatch:
   
@@ -30,12 +35,12 @@ jobs:
    uses: ./.github/workflows/deploy-staging.yml
  
  # call depoly ecs workflow
-  call-deployECS-workflow:
-    permissions:
-      contents: read
-      id-token: write
-    needs : call-deployStaging-workflow
-    uses: ./.github/workflows/ecs-deploy.yml
+  #call-deployECS-workflow:
+    #permissions:
+      #contents: read
+      #id-token: write
+    #needs : call-deployStaging-workflow
+    #uses: ./.github/workflows/ecs-deploy.yml
   
   
   

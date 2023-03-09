@@ -15,7 +15,7 @@ on:
     #
 jobs:
   call-build-workflow:
-   uses: ./.tfm-ecs/.github/workflows/build.yml
+   uses: ./.github/workflows/build.yml
   run-lint:
     runs-on: ubuntu-latest
     steps:

@@ -1,7 +1,7 @@
 name: save to artifactory
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
  saveArtifact:
